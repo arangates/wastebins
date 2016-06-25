@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit">
+  <title>WastebinUI</title>
+
+  <!-- Place favicon.ico in the `app/` directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Production Wastebin">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+
+    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="liquidFillGauge.js" language="JavaScript"></script>
+
+    <script type="text/javascript" src="https://pubnub.github.io/eon/v/eon/0.0.10/eon.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://pubnub.github.io/eon/v/eon/0.0.10/eon.css" />
+
+    <style>
+        .liquidFillGaugeText {
+         font-family: Helvetica; font-weight: bold; 
+     }
+    </style>
+
+    
+    <script src="twilio/temboo.js"></script>
+
+
+  <script type="text/javascript">
+    function resetHandler(event) 
+      {
+                Polymer.dom(event).localTarget.parentElement.reset();
+            }  
+  </script>
+
+
+  <!-- Because this project uses vulcanize this should be your only html import
+       in this file. All other imports should go in elements.html -->
+  <link rel="import" href="elements/elements.html">
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+</head>
+
+<body unresolved>
+
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel" responsive-width="700px">
+      <!-- Drawer Scroll Header Panel -->
+      <paper-scroll-header-panel drawer fixed>
+
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span class="menu-name">Services</span>
+        </paper-toolbar>
+
+        <paper-menu attr-for-selected="data-route" selected="[[route]]">
+          <!-- CATEGORY  ROUTE: -->
+            <a data-route="category1" href="{{baseUrl}}">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Dashboard</span>
+            </a>
+
+         
+          <!-- CATEGORY  ROUTE: -->
+            <a data-route="category2" href="{{baseUrl}}c2">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Track Bins</span>
+            </a>
+
+           <!-- CATEGORY  ROUTE: -->
+            <a data-route="category3" href="{{baseUrl}}c3">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Alert System</span>
+            </a>
+
+           <!-- CATEGORY  ROUTE: -->
+           <!--  <a data-route="category4" href="{{baseUrl}}c4">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Category 4</span>
+            </a>
+ -->
+           
+
+        </paper-menu>
+
+      </paper-scroll-header-panel>
+
+      <!-- Main Area -->
+      <paper-scroll-header-panel class="flex" main id="headerPanelMain" condenses noReveal>
+        <!-- Main Toolbar -->
+        <paper-toolbar id="mainToolbar" class="tall">
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle>
+          </paper-icon-button>
+
+          <span class="space"></span>
+
+          
+          <!-- Application name -->
+          <div class="middle middle-container">
+            <div class="app-name">Wastebin</div>
+          </div>
+
+          <!-- Application sub title -->
+          <div class="bottom bottom-container">
+            <div class="bottom-title">Collect Garbage Smart</div>
+          </div>
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+              <!-- SECTION FOR CATEGORY -->
+             <section data-route="c1">
+
+<paper-material elevation="3">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<svg id="fillgauge1" width="300" height="300"></svg>
+      <paper-material elevation="3" style="align:right;">
+        <font size="34">UniTech Infospace</font>
+        <li>Bin-Id    &nbsp;&nbsp;&nbsp;   : 1010111</li>
+        <li>Capacity &nbsp;&nbsp;&nbsp;     : 300 KG </li>
+        <li>Status       &nbsp;&nbsp;&nbsp;: Full </li>
+        <li>location     &nbsp;&nbsp;&nbsp;: Kolkatta,India</li>
+        <li>last service &nbsp;&nbsp;&nbsp;: 23-04-2016</li>
+      </paper-material>
+</paper-material>
+            
+<script language="JavaScript">
+        var pubnub = PUBNUB.init({
+                publish_key: 'pub-c-3588af66-9bbd-4984-b578-27f5877f17db',
+                subscribe_key: 'sub-c-598e4d8e-e9e4-11e4-91d3-0619f8945a4f'
+              });
+
+        var channel = 'Kcteee';
+        var binVal= 50;
+        var config1 = liquidFillGaugeDefaultSettings();
+        config1.waveAnimateTime = 1000;
+        config1.waveOffset = 0.25;
+        var gauge1 = loadLiquidFillGauge("fillgauge1", 90,config1);
+            
+        setInterval(function(){
+
+                    pubnub.subscribe({
+
+                    channel : channel,
+                    message : function( message, env, channel )
+                    {
+                    
+                        // RECEIVED MESSAGE.
+
+                        binVal=message.analog[1];;
+                       
+                       
+                    }
+                    
+                    
+                                 });
+                    console.log(binVal);
+                    console.log('fu');
+
+              
+                gauge1.update(binVal);
+
+
+        }, 1000);
+</script>
+
+
+          
+               </section>
+
+     <!-- ----------------------------------------------------------------------- -->
+
+     <!-- ----------------------------------------------------------------------- -->
+
+
+              <!-- SECTION FOR CATEGORY -->
+             <section data-route="c2">
+                <!-- PRODUCT PAGE -->
+            
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1-2estVxuV6c9D7BzQy8qVVesaX8&z=12" width="99%" height="800"></iframe>
+
+              </section>
+             
+                   
+     <!-- ----------------------------------------------------------------------- -->
+
+     <!-- ----------------------------------------------------------------------- -->
+
+            <!-- SECTION FOR CATEGORY -->
+             <section data-route="c3">
+                <!-- PRODUCT PAGE -->
+            
+<iframe src="https://www.google.com/maps/d/embed?mid=1uxzjSdlKkwE8li_Hji7tagq0ZNs&z=12" width="99%" height="800"></iframe>
+              </section>
+
+     <!-- ----------------------------------------------------------------------- -->
+
+     <!-- ----------------------------------------------------------------------- -->
+
+
+              <!-- SECTION FOR CATEGORY -->
+             <section data-route="c4">
+                <!-- PRODUCT PAGE -->
+            
+
+              
+                
+              </section>
+
+       <!-- ----------------------------------------------------------------------- -->
+
+       <!-- ----------------------------------------------------------------------- -->
+
+
+              <!-- SECTION FOR CATEGORY -->
+             <section data-route="c5">
+                <!-- PRODUCT PAGE -->
+          
+               
+              </section>
+
+
+  <!-- ----------------------------------------------------------------------- -->
+
+   <!-- ----------------------------------------------------------------------- -->
+
+<section data-route="report">
+<paper-toolbar>
+<paper-tabs selected="{{selected}}" noink style="width: 600px;">
+  <paper-tab>Analysis</paper-tab>
+  <paper-tab>Real-time</paper-tab>
+  <paper-tab>Dashboard</paper-tab>
+  <paper-tab>something</paper-tab>
+</paper-tabs>
+</paper-toolbar>
+
+<iron-pages selected="{{selected}}">
+  <div>
+    
+      <!-- <paper-toast id="toast0" text="This toast auto-closes after 3 seconds"></paper-toast> -->
+
+      <paper-material id="cat_show" elevation="1"></paper-material>
+      <paper-button raised onclick="showcard();toast2.open();">Check rawmaterials</paper-button>
+      <div id="checkraw" class="marai">
+      <paper-material id="p1" elevation="1"></paper-material>
+      <paper-material id="p2" elevation="1"></paper-material>
+      <paper-material id="p3" elevation="1"></paper-material>
+      <paper-toast id="toast2" class="fit-bottom" text="Applying threshold settings"></paper-toast>
+      </div>
+  </div>
+
+  <div>
+  <paper-material elevatio="3">
+  <h1>Stock</h1>
+    <div id="chart"></div></paper-material>
+    <paper-material elevatio="3">
+  <h1>Demand</h1>
+    <div id="demand"></div></paper-material>
+     
+
+  </div>
+  <div>
+    Master planning !
+  
+  </div>
+</iron-pages>
+      </section>
+         <!-- ----------------------------------------------------------------------- -->
+
+         <!-- ----------------------------------------------------------------------- -->
+<section data-route="settings">
+
+</section>
+
+
+              <section data-route="contact">
+
+              <!-- CONTACT DETAILS -->
+
+              <paper-material elevation="1">
+                      <p> 
+                          Tiecicon House, Dr. E. Moses Road
+                          Maharashtra
+                          Bombay 400011
+                          India
+                          Phone: 91-22-4964900
+                          Fax: 91-22-4950505                   
+                      </p>
+              </paper-material>
+
+              <!-- DISPLAY MAP -->
+           <paper-material elevation="1">
+               <google-map latitude="30.980500" longitude="+76.801901">
+                 <google-map-marker latitude="30.980500" longitude="+76.801901"
+                       title="Procter & Gamble!" draggable="true" drag-events>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi91rb7Trn2o54ePqj0EzM3DPXigDR6_iiEiOyovKQzCDSA97Oc3ro1g" />
+                  </google-map-marker>
+              </google-map>
+                           
+           </paper-material>  
+          </section>
+            
+      </paper-scroll-header-panel>
+   </iron-pages>
+</paper-drawer-panel>
+        </div>
+
+    
+
+    <paper-toast id="toast">
+      <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+    </paper-toast>
+
+    <!-- Uncomment next block to enable Service Worker support (1/2) -->
+    <!--
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          base-uri="bower_components/platinum-sw/bootstrap"
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="fastest"
+                         cache-config-file="cache-config.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+    -->
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+</html>
+
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="p1"></div>
+<div id="p2"></div>
+<div id="p3"></div>
+<script>
+function myFunction() {
+var raw11=10;
+var raw12=30;
+var raw13=30;
+var t11=20;
+var t12=10;
+var t13=30;
+
+      if(raw11<t11){document.getElementById("p1").innerHTML=("we have Rawmaterial-1(die) of category1" +raw11+ " kg in stock ...i guess its scarce...notifying vendor!");}else{document.getElementById("p1").innerHTML=("Rawmaterial-1(die) available !");}
+             // console.log("Rm-1(die) of category1 is scarce...notifying vendor");  }   
+      if(raw12<t12){document.getElementById("p2").innerHTML=("we have Rawmaterial-2(fabric) of category1" +raw12 +"kg in stock scarce...i guess its scarce...notifying vendor!");}else{document.getElementById("p2").innerHTML=("Rawmaterial-2(fabric) available !");}
+            // console.log("Rm-2(fabric) of category1 is scarce...notifying vendor");}
+      if(raw13<t13){document.getElementById("p3").innerHTML=("we have Rawmaterial-3(fabric)of category1" +raw13 +"Ltr in stock scarce...i guess its scarce...notifying vendor!");}else{document.getElementById("p3").innerHTML=("Rawmaterial-3(Fragrance) available !");}
+             // console.log("Rm-3(Fragrance) of category1 is scarce...notifying vendor");}
+}
+</script>
+<button onclick="myFunction()">Try it</button>
+</body>
+</html>

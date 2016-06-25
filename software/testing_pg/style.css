@@ -1,0 +1,23 @@
+input{
+ border:5px solid orange;
+ border-radius:50px;
+ color: white;
+ background-color: black;
+ }
+body{
+       background-color:black;	
+}
+h1{
+  color:orange;
+  font-size:22px;
+  text-align:center;
+ }
+p{
+	color: white;
+}
+button{
+       background-color:orange;
+       padding:10px 50px;
+       color: black;
+       border: none;
+}

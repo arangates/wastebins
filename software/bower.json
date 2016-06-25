@@ -1,0 +1,35 @@
+{
+  "name": "polymer-starter-kit",
+  "private": true,
+  "dependencies": {
+    "iron-elements": "PolymerElements/iron-elements#^1.0.0",
+    "neon-elements": "PolymerElements/neon-elements#^1.0.0",
+    "page": "visionmedia/page.js#~1.6.4",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.1",
+    "platinum-elements": "PolymerElements/platinum-elements#^1.1.0",
+    "polymer": "Polymer/polymer#^1.2.0",
+    "google-map": "GoogleWebComponents/google-map#~1.1.9",
+    "login-form": "*",
+    "jv-datepicker": "~2.1.9",
+    "firebase-element": "GoogleWebComponents/firebase-element#~1.0.12",
+    "google-chart": "GoogleWebComponents/google-chart#~1.0.4",
+    "google-sheets": "GoogleWebComponents/google-sheets#~1.0.5",
+    "google-apis": "GoogleWebComponents/google-apis#~1.1.4",
+    "pubnub-element": "~4.0.1",
+    "video-camera-element": "~0.1.3",
+    "swipe-pages": "~0.2.0",
+    "paper-datatable": "~0.9.8",
+    "moment": "~2.11.2"
+  },
+  "devDependencies": {
+    "web-component-tester": "^4.0.0"
+  },
+  "ignore": [],
+  "resolutions": {
+    "polymer": "^1.2.3",
+    "paper-button": "^1.0.0",
+    "paper-ripple": "^1.0.0",
+    "font-roboto": "^1.0.1",
+    "paper-dialog": "^1.0.0"
+  }
+}

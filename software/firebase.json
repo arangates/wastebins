@@ -1,0 +1,11 @@
+{
+  "firebase": "lonelyspot",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
+
+//lonelyspot blazing-heat-759

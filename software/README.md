@@ -4,7 +4,7 @@
 > A smart way to collect garbages efficiently
 
 ### Demo
-See latest Polymer Starter Kit Demo (from master) at https://polymerelements.github.io/polymer-starter-kit/
+See latest Demo (from master) at https://arangates.github.io/wastebin/
 
 ## Getting Started
  you need to:

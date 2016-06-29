@@ -1,49 +1,18 @@
 ![](https://cloud.githubusercontent.com/assets/110953/7877439/6a69d03e-0590-11e5-9fac-c614246606de.png)
-## Polymer Starter Kit
+## WasteBin
 
-> A starting point for building web applications with Polymer 1.0
-
-### Included out of the box:
-
-* [Polymer](https://www.polymer-project.org/), [Paper](https://elements.polymer-project.org/browse?package=paper-elements), [Iron](https://elements.polymer-project.org/browse?package=iron-elements) and [Neon](https://elements.polymer-project.org/browse?package=neon-elements) elements
-* [Material Design](http://www.google.com/design/spec/material-design/introduction.html) layout
-* Routing with [Page.js](https://visionmedia.github.io/page.js/)
-* Unit testing with [Web Component Tester](https://github.com/Polymer/web-component-tester)
-* Optional offline setup through [Platinum](https://elements.polymer-project.org/browse?package=platinum-elements) Service Worker elements
-* End-to-end Build Tooling (including [Vulcanize](https://github.com/Polymer/vulcanize))
-* [Recipes](/docs/README.md/) for ES2015 support, Polymer performance, using Chrome Dev Editor, Deploying to GitHub Pages, Deploying to Firebase, and Mobile Chrome Apps
+> A smart way to collect garbages efficiently
 
 ### Demo
 See latest Polymer Starter Kit Demo (from master) at https://polymerelements.github.io/polymer-starter-kit/
 
-### Tutorials
-
-Check out the Polymer Starter Kit tutorials on [polymer-project.org](https://www.polymer-project.org):
-
-* [Set up the PSK](https://www.polymer-project.org/1.0/docs/start/psk/set-up.html)
-* [Create a page](https://www.polymer-project.org/1.0/docs/start/psk/create-a-page.html)
-* [Deploy the PSK to the web](https://www.polymer-project.org/1.0/docs/start/psk/deploy.html)
-
 ## Getting Started
-
-To take advantage of Polymer Starter Kit you need to:
+ you need to:
 
 1. Get a copy of the code.
 2. Install the dependencies if you don't already have them.
 3. Modify the application to your liking.
 4. Deploy your production code.
-
-### Get the code
-
-[Download](https://github.com/polymerelements/polymer-starter-kit/releases/latest) and extract Polymer Starter Kit to where you want to work. The project comes in two flavours - Light and Full.
-
-**Beginners**: Try Polymer Starter Kit Light. This doesn't require any extra dependencies nor knowledge of modern front-end tooling. This option is good for prototyping if you haven't build a Polymer app before.
-
-**Intermediate - Advanced**: Use the full version of Polymer Starter Kit. This comes with all the build tools you'll need for testing and productionising your app so it's nice and lean. You'll need to run a few extra commands to install the tools we recommend but it's worth it to make sure your final app is super optimised.
-
-:warning: **Important**: Polymer Starter Kit, and Polymer Starter Kit Light, both contain dotfiles (files starting with a `.`). If you're copying the contents of the Starter Kit to a new location make sure you bring along these dotfiles as well! On Mac, [enable showing hidden files](http://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/), then try extracting/copying Polymer Starter Kit again. This time the dotfiles needed should be visible so you can copy them over without issues.
-
-Rob Dodson has a fantastic [PolyCast video](https://www.youtube.com/watch?v=xz-yixRxZN8) available that walks through using Polymer Starter Kit. An [end-to-end with Polymer](https://www.youtube.com/watch?v=1f_Tj_JnStA) and Polymer Starter Kit talk is also available.
 
 ### Install dependencies
 
@@ -285,33 +254,12 @@ If for any reason you need to disable Service Worker support after previously en
 
 ## Frequently Asked Questions
 
-### Where do I customise my application theme?
-
-Theming can be achieved using [CSS Custom properties](https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details) via [app/styles/app-theme.html](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/styles/app-theme.html).
-You can also use `app/styles/main.css` for pure CSS stylesheets (e.g for global styles), however note that Custom properties will not work there under the shim.
-
-A [Polycast](https://www.youtube.com/watch?v=omASiF85JzI) is also available that walks through theming using Polymer 1.0.
-
 ### Where do I configure routes in my application?
 
 This can be done via [`app/elements/routing.html`](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/routing.html). We use Page.js for routing and new routes
 can be defined in this import. We then toggle which `<iron-pages>` page to display based on the [selected](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/index.html#L105) route.
 
-### Why are we using Page.js rather than a declarative router like `<more-routing>`?
 
-`<more-routing>` (in our opinion) is good, but lacks imperative hooks for getting full control
-over the routing in your application. This is one place where a pure JS router shines. We may
-at some point switch back to a declarative router when our hook requirements are tackled. That
-said, it should be trivial to switch to `<more-routing>` or another declarative router in your
-own local setup.
-
-### Where can I find the application layouts from your Google I/O 2015 talk?
-
-App layouts live in a separate repository called [app-layout-templates](https://github.com/PolymerElements/app-layout-templates).
-You can select a template and copy over the relevant parts you would like to reuse to Polymer Starter Kit.
-
-You will probably need to change paths to where your Iron and Paper dependencies can be found to get everything working.
-This can be done by adding them to the [`elements.html`](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/elements.html) import.
 
 ### Something has failed during installation. How do I fix this?
 
@@ -364,16 +312,4 @@ during a build.
 
 If you are not using the build-blocks, but still wish for additional files (e.g scripts or stylesheets) to be included in the final `dist` directory, you will need to either copy these files as part of the gulpfile.js build process (see the `copy` task for how to automate this) or manually copy the files.
 
-### I'm finding the installation/tooling here overwhelming. What should I do?
 
-Don't worry! We've got your covered. Polymer Starter Kit tries to offer everything you need to build and optimize your apps for production, which is why we include the tooling we do. We realise however that our tooling setup may not be for everyone.
-
-If you find that you just want the simplest setup possible, we recommend using Polymer Starter Kit light, which is available from the [Releases](https://github.com/PolymerElements/polymer-starter-kit/releases) page. This takes next to no time to setup.
-
-## Licensing
-
-Like other Google projects, Polymer Starter Kit includes Google license headers at the top of several of our source files. Google's open-source licensing requires that this header be kept in place (sorry!), however we acknowledge that you may need to add your own licensing to files you modify. This can be done by appending your own extensions to these headers.
-
-## Contributing
-
-Polymer Starter Kit is a new project and is an ongoing effort by the Web Component community. We welcome your bug reports, PRs for improvements, docs and anything you think would improve the experience for other Polymer developers.

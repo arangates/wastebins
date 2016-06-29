@@ -1,5 +1,5 @@
 # wastebins
-collect garbage smart
+
 WasteBin is internet of things based solution which provides the optimises way of collecting and managing the cabbages of the city by using data from its network of small wireless sensors inside waste containers, The sensor network sends data to WasteBin servers to work out if the containers are full or not, and when they should be emptied
 
 wastebin sensors are remotely configurable and provide information on container fill levels ,geo positioning,temperature and more.

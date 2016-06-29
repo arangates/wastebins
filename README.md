@@ -10,4 +10,4 @@ The wastebin live web application is very easy to use and feature-rich a powerfu
 
 A built in plan my route application that offers not only the best road route but ensures the your service vehicle only visits sites that needs services,route information from the live portal can be send seamlessly send to the smartbin mobile app,access on smartphones and routes executed
 
-https://he-s3.s3.amazonaws.com/media/screenshots/6349cdb6348e2escreen%20shot%202016-06-19%20at%2011.28.37%20pm.png?Signature=qN6RezeX2X4EMMtDYVM9iljt8eM%3D&Expires=1467191637&AWSAccessKeyId=AKIAJLE6MUHDYS3HN6YQ
+<img src="https://he-s3.s3.amazonaws.com/media/screenshots/75f363575f3404screenshot%20from%202016-06-25%2016-08-43.png?Signature=GxTccN2KQS2IT1se%2B3h%2BK0kuniQ%3D&Expires=1467191637&AWSAccessKeyId=AKIAJLE6MUHDYS3HN6YQ">

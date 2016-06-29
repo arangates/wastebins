@@ -9,3 +9,5 @@ Sensors communicate over the wifi network then via the internet to smartbin secu
 The wastebin live web application is very easy to use and feature-rich a powerful all in one platform for managing your asserts with features including geo map views showing realtime status of asserts and drill-down performance details on each asserts and key performance indication and benchmarks,powerful backend that generates reports for your application
 
 A built in plan my route application that offers not only the best road route but ensures the your service vehicle only visits sites that needs services,route information from the live portal can be send seamlessly send to the smartbin mobile app,access on smartphones and routes executed
+
+https://he-s3.s3.amazonaws.com/media/screenshots/6349cdb6348e2escreen%20shot%202016-06-19%20at%2011.28.37%20pm.png?Signature=qN6RezeX2X4EMMtDYVM9iljt8eM%3D&Expires=1467191637&AWSAccessKeyId=AKIAJLE6MUHDYS3HN6YQ
